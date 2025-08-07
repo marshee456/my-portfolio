@@ -149,7 +149,7 @@ const projectsData = {
         team: 'Team of 2',
         showFiles: true,
         showMediaGallery: false,
-        githubUrl: 'https://github.com/Sheena-sh/projects-portfolio.git',
+        githubUrl: 'https://github.com/marshee456/my-portfolio.git',
         objectives: [
             'Extract sentiment patterns from social media posts',
             'Apply association rule mining for insight discovery',
