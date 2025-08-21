@@ -4,7 +4,7 @@
     <nav class="fixed top-0 w-full bg-white shadow-lg z-50">
       <div class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <div class="text-2xl font-bold text-gray-800">{{ portfolioData.personal.name }}</div>
+          <div class="text-2xl font-bold text-gray-800">Portfolio</div>
           <div class="hidden md:flex space-x-6">
             <a v-for="section in ['hero', 'about', 'skills', 'projects', 'experience']" 
                :key="section"
@@ -18,38 +18,56 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="pt-20 pb-16 bg-gradient-to-br from-blue-600 to-purple-700">
-      <div class="container mx-auto px-6 text-center text-white">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">
-          {{ portfolioData.personal.name }}
-        </h1>
-        <p class="text-xl md:text-2xl mb-6 opacity-90">
-          {{ portfolioData.personal.title }}
-        </p>
-        <p class="text-lg mb-8 max-w-3xl mx-auto opacity-80">
-          {{ portfolioData.personal.summary }}
-        </p>
-        <div class="flex justify-center space-x-4 mb-8">
-          <a :href="`mailto:${portfolioData.personal.email}`" 
-             class="flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
-            <Mail class="w-5 h-5" />
-            <span>Contact Me</span>
-          </a>
-          <router-link to="/projects" 
-           class="flex items-center space-x-2 border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
-            <ExternalLink class="w-5 h-5" />
-            <span>View Projects</span>
-          </router-link>
-        </div>
-        <div class="flex justify-center space-x-6 text-sm opacity-80">
-          <div class="flex items-center space-x-2">
-            <Mail class="w-4 h-4" />
-            <span>{{ portfolioData.personal.email }}</span>
+ <!-- Hero Section -->
+    <section id="hero" class="pt-20 pb-20 bg-gradient-to-br from-blue-600 to-purple-700">
+      <div class="container mx-auto px-6 text-white">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <!-- Profile image (left on md+, top on small screens) -->
+          <div class="flex-shrink-0">
+            <div
+              class="w-60 h-60 md:w-74 md:h-74 rounded-full ring-8 ring-white overflow-hidden bg-white shadow-2xl transform transition-transform duration-500 hover:scale-105"
+              style="animation: float 6s ease-in-out infinite;"
+            >
+              <img src="/files/projects/ProfilePic/c08c531b-d058-46bf-97f7-9a7fafbc8dc5.jpg" alt="Profile"
+                   class="w-full h-full object-cover" />
+            </div>
           </div>
-          <div class="flex items-center space-x-2">
-            <Phone class="w-4 h-4" />
-            <span>{{ portfolioData.personal.phone }}</span>
+
+          <!-- Content -->
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-2">
+              {{ portfolioData.personal.name }}
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 opacity-90">
+              {{ portfolioData.personal.title }}
+            </p>
+            <p class="text-lg mb-6 max-w-3xl md:max-w-none mx-auto md:mx-0 opacity-80">
+              {{ portfolioData.personal.summary }}
+            </p>
+
+            <div class="flex justify-center md:justify-start space-x-4 mb-4">
+              <a :href="`mailto:${portfolioData.personal.email}`"
+                 class="flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                <Mail class="w-5 h-5" />
+                <span>Contact Me</span>
+              </a>
+              <router-link to="/projects"
+                           class="flex items-center space-x-2 border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                <ExternalLink class="w-5 h-5" />
+                <span>View Projects</span>
+              </router-link>
+            </div>
+
+            <div class="flex justify-center md:justify-start space-x-6 text-sm opacity-80">
+              <div class="flex items-center space-x-2">
+                <Mail class="w-4 h-4" />
+                <span>{{ portfolioData.personal.email }}</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <Phone class="w-4 h-4" />
+                <span>{{ portfolioData.personal.phone }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -316,10 +334,10 @@ const activeSection = ref('hero')
 const portfolioData = {
   personal: {
     name: "Maria Sheena Shield P. Emocling",
-    title: "Computer Science Graduate",
+    title: "Computer Science Graduate and Web Developer",
     email: "sheimariemocling493@gmail.com",
     phone: "09612612753",
-    summary: "As an aspiring Computer Science professional, I aim to apply my undergraduate knowledge and skills in the IT and Computer Science sectors. I am driven to further develop my expertise through internships, academic projects, and specialized skills, seeking a dynamic company where I can contribute, grow, and collaborate effectively."
+    summary: "As a Computer Science Graduate, I aim to apply my undergraduate knowledge and skills in the IT and Computer Science sectors. I am driven to further develop my expertise through internships, academic projects, and specialized skills, seeking a dynamic company where I can contribute, grow, and collaborate effectively."
   },
   
   skills: [
@@ -343,6 +361,20 @@ const portfolioData = {
       ],
       technologies: ["Laravel", "React", "PHP", "MySQL"],
       achievements: ["Deployed system for 500+ cadets", "Improved performance by 30%"]
+    },
+    {
+      title: "Web Developer",
+      company: "Personal Project",
+      period: "2024",
+      type: "Project",
+      responsibilities: [
+        "Full stack development"
+      ],
+      technologies: ["Laravel", "React", "PHP", "Docker", "Tailwind", "Javascript", "Vue.js"],
+      achievements: [
+        "Creation of web pages (full stack)",
+        "Doing backend maintenance and improvement"
+      ]
     }
   ],
   
@@ -415,9 +447,11 @@ const portfolioData = {
   },
   
   certifications: [
-    { name: "Google Data Analytics Professional Certificate", issuer: "Coursera" },
-    { name: "Advanced Data Analytics Professional Certificate", issuer: "Coursera" },
-    { name: "CHED - LAKAS AI/NLP Training", issuer: "CHED" }
+      { name: "Google Data Analytics Professional Certificate", issuer: "Coursera" },
+      { name: "Advanced Data Analytics Professional Certificate", issuer: "Coursera" },
+      { name: "Business Analytics Certificate", issuer: "Coursera" },
+      { name: "IBM Generative AI Essentials Certificate", issuer: "SkillUp" },
+      { name: "CHED - LAKAS AI/NLP Training", issuer: "CHED" }
   ]
 }
 
@@ -468,3 +502,11 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
+
+<style scoped>
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+</style>

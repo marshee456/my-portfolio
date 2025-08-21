@@ -98,9 +98,11 @@ const portfolioData = {
         period: "2021 - 2025",
         honors: ["Dean's List (1st yr to 4th yr)", "Cum Laude", "Batch 2025"]
     },
-    certifications: [
+     certifications: [
         { name: "Google Data Analytics Professional Certificate", issuer: "Coursera" },
         { name: "Advanced Data Analytics Professional Certificate", issuer: "Coursera" },
+        { name: "Business Analytics Certificate", issuer: "Coursera" },
+        { name: "IBM Generative AI Essentials Certificate", issuer: "SkillUp" },
         { name: "CHED - LAKAS AI/NLP Training", issuer: "CHED" }
     ]
 };
