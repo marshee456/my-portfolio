@@ -364,8 +364,8 @@ const portfolioData = {
     },
     {
       title: "Web Developer",
-      company: "Personal Project",
-      period: "2024",
+      company: "Project Work",
+      period: "2025 - Present",
       type: "Project",
       responsibilities: [
         "Full stack development"
